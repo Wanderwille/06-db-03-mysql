@@ -26,46 +26,49 @@
 mysql> \s
 --------------
 mysql  Ver 8.0.35 for Linux on x86_64 (MySQL Community Server - GPL)
-
-Connection id:          11
-Current database:       test_backup
-Current user:           root@localhost
-SSL:                    Not in use
-Current pager:          stdout
-Using outfile:          ''
-Using delimiter:        ;
-Server version:         8.0.35 MySQL Community Server - GPL
-Protocol version:       10
-Connection:             Localhost via UNIX socket
-Server characterset:    utf8mb4
-Db     characterset:    utf8mb4
-Client characterset:    latin1
-Conn.  characterset:    latin1
-UNIX socket:            /var/run/mysqld/mysqld.sock
-Binary data as:         Hexadecimal
-Uptime:                 21 min 15 sec
+|  Information           |  Information                          |
+|------------------------|---------------------------------------|
+| Connection id:         | 11                                    |
+| Current database:      | test_backup                           |
+| Current user:          | root@localhost                        |
+| SSL:                   | Not in use                            |
+| Current pager:         | stdout                                |
+| sing outfile:          |''                                     |
+| Using delimiter:       | ;                                     |
+| Server version:        | 8.0.35 MySQL Community Server - GPL   |
+| Protocol version:      | 10                                    |
+| Connection:            | Localhost via UNIX socket             |
+| Server characterset:   | utf8mb4                               |
+| Db     characterset:   | utf8mb4                               |
+| Client characterset:   | latin1                                |
+| Conn.  characterset:   | latin1                                |
+| UNIX socket:           | /var/run/mysqld/mysqld.sock           |
+| Binary data as:        | Hexadecimal                           |
+| Uptime:                | 21 min 15 sec                         |
 
 Threads: 2  Questions: 55  Slow queries: 0  Opens: 160  Flush tables: 3  Open tables: 78  Queries per second avg: 0.043
 --------------
 
+Информацию о запросе, решил добавить в таблицу, для лучшей читаемости.
+
 Подключение к БД: для восстановление Бд пришлось создать новую БД, команда для подключения `USE test_backup`
 
 mysql> show tables;
-+-----------------------+
+|-----------------------|
 | Tables_in_test_backup |
-+-----------------------+
+|-----------------------|
 | orders                |
-+-----------------------+
+|-----------------------|
 1 row in set (0.00 sec)
 
 Значения > `300`
 
 mysql> SELECT * FROM orders WHERE price > 300
     -> ;
-+----+----------------+-------+
+|----|----------------|-------|
 | id | title          | price |
-+----+----------------+-------+
+|----+----------------|-------|
 |  2 | My little pony |   500 |
-+----+----------------+-------+
+|----|----------------|-------|
 1 row in set (0.00 sec)
 
