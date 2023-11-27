@@ -1,0 +1,10 @@
+version: '3'
+services:
+  mysql: 
+    image: mysql:8.0
+    container_name: mysql_dz
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - C:/Users/serpo/Downloads/backups:/backups
